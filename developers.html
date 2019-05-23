@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<title>STEEM SCHOOL</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="icon" href="icon.jpg">
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;	
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  
+}
+
+.menu {
+  display: none;
+}
+</style>
+
+<body class="developers">
+<!-- Links (sit on top) -->
+<div class="w3-top w3-animate-top" style="position:fixed;top:0;width:100%">
+  <div class="w3-row w3-padding w3-black">
+    <div class="w3-col" style="width:20%">
+      <a href="#" class="w3-button w3-block" style="background-color:#211d7cff; float:left">FORUM</a>
+    </div>
+	<div class="w3-col" style="width:20%; float:right">
+		<a href="index.html" class="w3-button w3-block" style="background-color:darkgreen">FOR USERS</a>
+	</div>
+  </div>
+</div>
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-large" style="padding-top:3em;padding-bottom:10em">
+
+<!-- Content Container -->
+<header>
+<div class="w3-content" style="padding-top:5em">
+	<h1>Hey there ambitious developer!</h1>
+	<p>
+	Our team is happy for your motivation. To further aid you in your research on the subject, let us save you some time by introducing you to the best guides we were able to find. Choose one of these supported programming languages.
+	</p>
+
+</div>
+<div class="buttonCont" style="float:center" id="button">
+	<button id="pythonButton" class="prog" style="background-image:url(pythonIcon.svg)" onclick="document.getElementById('python').scrollIntoView()"/>
+	<button id="rubyButton" class="prog" style="background-image:url(rubyIcon.svg)" onclick="document.getElementById('ruby').scrollIntoView()"/>
+	<button id="javascriptButton" class="prog" style="background-image:url(jsIcon.svg)"  onclick="document.getElementById('javascript').scrollIntoView()"/>
+</div>
+
+<div class="buttonCont" style="float:center;padding-top:2em" id="button">
+	<button id="phpButton" class="prog" style="background-image:url(phpIcon.svg)" onclick="document.getElementById('php').scrollIntoView()"/>
+	<button id="goButton" class="prog" style="background-image:url(goIcon.svg)" onclick="document.getElementById('go').scrollIntoView()"/>
+	<button id="javaButton" class="prog" style="background-image:url(javaIcon.svg)" onclick="document.getElementById('java').scrollIntoView()"/>
+</div>
+</header>
+<!-- Content -->
+
+<div class="w3-container" style="padding-top:15em;">
+	<div class="languageDiv" id="python">
+		<h1>PYTHON</h1>
+		<hr>
+		<p>The official library : <a href="https://steem.readthedocs.io/en/latest/">Steem-Python</a></p>
+		<p>Library that simplifies working with the Steem's blockchain and cryptographic technology : <a href="https://beem.readthedocs.io/en/latest/">BEEM</a></p>
+		<hr>
+	</div>
+	<div class="languageDiv" id="ruby">
+		<h1>RUBY</h1>
+		<hr>
+		<p>The official API : <a href="https://github.com/steemit/steem-ruby">Steem-Ruby</a></p>
+		<p>API that adds usefull functions to the official core : <a href="https://github.com/inertia186/radiator">Radiator</a></p>
+		<hr>
+	</div>
+	<div class="languageDiv" id="javascript">
+		<h1>JavaScript</h1>
+		<hr>
+		<p>The official library: <a href="https://github.com/steemit/steem-js">Steem-JS</a></p>
+		<p>Robust library that adds support for Node.js : <a href="https://jnordberg.github.io/dsteem/">DSteem</a></p>		
+		<hr>
+	</div>
+	<div class="languageDiv" id="php">
+		<h1>PHP</h1>
+		<hr>
+		<p>Unofficial collection of usefull tools for PHP. But is not quite production ready yet : <a href="https://github.com/dragosroua/php-steem-tools">Steem-tools</a></p>
+		<hr>
+	</div>
+	
+	<div class="languageDiv" id="go">
+		<h1>GO</h1>
+		<hr>
+		<p>Unofficial RPC client library for working with Steem using Golang : <a href="https://github.com/go-steem/rpc">Steem-Go</a></p>
+		<hr>
+	</div>
+	<div class="languageDiv" id="java">
+		<h1>Java</h1>
+		<hr>
+		<p>API wrapper to access data stored in the Steem blockchain using Java <a href="https://github.com/marvin-we/steem-java-api-wrapper">SteemJ</a></p>
+		<hr>
+	</div>
+		
+	
+	
+
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-18">
+	  <!-- Assistant button-->
+  <div style="position:fixed; bottom:1em; right:1em">
+		<a onClick='alert("ASSISTANT")' class="" id="Assist" style="">
+		<img src="Assistant.svg" class="w3-animate-right" style="float:center; width:4em;  border-radius:50%; border-color:#000000e9; border-width:0.25em">
+		</a>
+	</div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>

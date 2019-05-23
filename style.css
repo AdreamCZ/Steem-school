@@ -1,0 +1,63 @@
+@font-face{
+	font-family: "Oneday";
+	src: url("Fonts/OneDayFF/Oneday.ttf")
+}
+
+
+#crypto,{
+	padding-top:50px;
+	margin-top:-50px;
+}
+#blockchain{
+	padding-top:50px;
+	margin-top:-50px;
+}
+
+#steem{
+	padding-top:50px;
+	margin-top:-50px;
+}
+
+button.prog{
+
+	width:10em;
+	height:10em;
+	border:none;
+	border-radius:1em;
+	background-size:100%;
+	background-color: #fdf5e6;
+}
+button.prog:hover{
+	box-shadow:0.3em 0.3em gray;
+	border:groove
+	
+}
+
+div.buttonCont{
+	display: flex;
+	justify-content:space-around;
+	
+}
+
+.languageDiv{
+	padding-left:3em;
+	padding-right:3em;
+	padding-top:7em;
+	padding-bottom:7em;
+}
+
+p{
+    font-family:Montserrat,sans-serif;
+}
+
+.developers h1{
+	color: darkgreen;
+	text-shadow:0.1em gray;
+	font-weight:bold;
+}
+
+hr{
+	border-color:darkgreen;
+	border-radius:100px;
+	
+}

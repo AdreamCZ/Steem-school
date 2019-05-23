@@ -1,0 +1,21 @@
+Ideas:
+	1) Forum and rewarding users with Steem for helping
+	2) Video animated tutorials
+
+Goal:
+	Make a helpful platform for users and developers interested in Steem
+
+Text:
+	With the Steem school platform we are aiming to present information about Steem as simple as possible.
+	Bound by our short time we have created simple prototype representing a base of the whole platform.
+	We have came up with ideas that would be in our opinion good to implement in order to achieve more helpfulness.
+	And given that, it would be good to create animated video tutorials explaining the principals of Steem platform for complete beginners.
+	Also forum where users experienced with the Steem platform can make tutorials and guide beginners.
+	And users creating useful guides will be rewarded with Steem in order to encourage creation of more guides.
+	
+	
+	
+	
+	
+	
+	
