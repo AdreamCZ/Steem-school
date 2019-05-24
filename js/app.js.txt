@@ -1,0 +1,10 @@
+class Application(){
+	constructor(name,id,author,uploaded){
+		this.name = name;
+		this.id = id;
+		this.author = author;
+		this.uploaded = uploaded;
+		}
+
+
+}
