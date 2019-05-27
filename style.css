@@ -95,7 +95,7 @@ a{
 	border-left:solid;
 	text-align:left;
 	border-width:0.15em;
-	border-color:#3E8914;
+	border-color:#ff9800;
 	padding-left:1em
 }
 
@@ -105,7 +105,7 @@ a{
 	border-bottom:solid;
 	text-align:left;
 	border-width:0.15em;
-	border-color:#3E8914;
+	border-color:#ff9800;
 	padding-left:1em
 }
 #Marketplace h2{
@@ -121,6 +121,6 @@ a{
 	border-bottom-right-radius:3em;
 	text-align:left;
 	border-width:0.15em;
-	border-color:#3E8914;
+	border-color:#ff9800;
 	padding-left:1em
 }
