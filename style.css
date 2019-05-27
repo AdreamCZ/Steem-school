@@ -190,10 +190,8 @@ a{
 	position: fixed;
 	left:10%;
 	right:10%;
-	top:10%;
-	bottom:10%;
-	display:flex;
-	justify-content:space-between;
+	top:0%;
+	bottom:0%;
 	background-color:#000000f7;
 	z-index: 2;
 }
@@ -215,6 +213,9 @@ a{
 	display:flex;
 	align-items:center;
 	justify-content:space-around;
+	display:flex;
+	flex-direction:column;
+	align-self:stretch;
 }
 .overbuttontext{
 	width:100%;
