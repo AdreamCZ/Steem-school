@@ -73,7 +73,7 @@ hr{
     text-align: center;
     display:table-cell;
     vertical-align:middle;
-}​
+}
 #Searchb{
    border:solid;
    border-width:0.15em;
@@ -84,6 +84,7 @@ hr{
    height:2.5em;
    display:flex;
    align-items:center;
+   background-color:#ff9800;
 }
 #Loginb{
 	float:right;
@@ -101,7 +102,7 @@ hr{
 	margin:0.5em;
 	border:solid;
 	border-width:0.15em;
-	border-color:#ff9800;
+	border-color:white;
 	height:2.5em;
 	width:65%;
 	float:right;
@@ -145,45 +146,42 @@ a{
 	margin:1em;
 	display:flex;
 	justify-content:space-around;
+	border:solid;
+	border-color:#ff9800;
+	border-width:0.15em;
+	border-radius:3em;
 }
 
 .nameDiv{
 	width:45%;
 	border-top-left-radius:3em;
 	border-bottom-left-radius:3em;
-	border-top:solid;
-	border-bottom:solid;
-	border-left:solid;
+	border-right:solid;
 	text-align:left;
 	border-width:0.15em;
 	border-color:#ff9800;
-	padding-left:1em
+	padding-left:1em;
+	background-color:#ff9800;
+	text-align:center;
+	color:black;
 }
 
 .authorDiv{
 	width:35%;
-	border-top:solid;
-	border-bottom:solid;
 	text-align:left;
-	border-width:0.15em;
-	border-color:#ff9800;
-	padding-left:1em
+	padding-left:1em;
+	text-align:center;
 }
 #Marketplace h2{
 	font-family:Montserrat,sans-serif;
-	color:black;
 }
 .downloadedDiv{
 	width:20%;
-	border-top:solid;
-	border-bottom:solid;
-	border-right:solid;
 	border-top-right-radius:3em;
 	border-bottom-right-radius:3em;
 	text-align:left;
-	border-width:0.15em;
-	border-color:#ff9800;
-	padding-left:1em
+	padding-left:1em;
+	text-align:center;
 }
 #Searchboxdiv{
 	width:100%;
