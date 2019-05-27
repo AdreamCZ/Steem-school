@@ -91,10 +91,10 @@ function populateList(apps){
 		
 	}
 	
-	apps.forEach(function(app){
+	apps.forEach(function(app,index){
 		var appDiv = document.createElement("div"); 
 		appDiv.className="appDiv";
-		appDiv.setAttribute("onClick","appInfo("+"\""+app.name+"\""+")");
+		appDiv.setAttribute("onClick","appInfo("+index+")"); //onclick
 		var nameDiv = document.createElement("div");
 		nameDiv.className = "nameDiv";
 		var appName = document.createElement("h2");
@@ -119,15 +119,34 @@ function populateList(apps){
 	});
 }
 
-function appInfo(app){
-	var body = document.getElementsByTagName("body");
+function appInfo(index){
+	app = apps[index];
+	var body = document.getElementsByTagName("body")[0];
 	var overlayDiv = document.createElement("div");
 	overlayDiv.className="overlay";
 	body.appendChild(overlayDiv);
 	var nameH=document.createElement("h3");
 	nameH.className="appName";
-	nameH.innerHTML=app;
+	nameH.innerHTML=app.name;
 	overlayDiv.appendChild(nameH);
+	var authorH = document.createElement("h3");
+	authorH.className="authorName";
+	authorH.innerHTML=app.author;
+	overlayDiv.appendChild(authorH);
+	var downloadBut = document.createElement("button");
+	downloadBut.className="w3-button overbutton";
+	var downloadText = document.createElement("p");
+	downloadText.className="overbuttontext";
+	downloadText.innerHTML="DOWNLOAD";
+	downloadBut.appendChild(downloadText);
+	overlayDiv.appendChild(downloadBut);
+	var contributeBut = document.createElement("button");
+	contributeBut.className="w3-button overbutton";
+	var contributeText = document.createElement("p");
+	contributeText.className="overbuttontext";
+	contributeText.innerHTML="CONTRIBUTE";
+	contributeBut.appendChild(contributeText);
+	overlayDiv.appendChild(contributeBut);
 	
 }
 	
