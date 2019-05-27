@@ -61,3 +61,66 @@ hr{
 	border-radius:100px;
 	
 }
+#Title{
+	font-family: "OneDay";
+	src: url("Fonts/OneDayFF/Oneday.ttf")
+}
+.area{
+    height: 100px;
+    width: 100px;
+    background: red;
+    margin:10px;
+    text-align: center;
+    display:table-cell;
+    vertical-align:middle;
+}​
+#Searchb, #Loginb{
+    font-family:Montserrat,sans-serif;
+}
+a{
+	text-decoration:none;
+}
+.appDiv{
+	margin:1em;
+	display:flex;
+	justify-content:space-around;
+}
+
+.nameDiv{
+	width:45%;
+	border-top-left-radius:3em;
+	border-bottom-left-radius:3em;
+	border-top:solid;
+	border-bottom:solid;
+	border-left:solid;
+	text-align:left;
+	border-width:0.15em;
+	border-color:#3E8914;
+	padding-left:1em
+}
+
+.authorDiv{
+	width:35%;
+	border-top:solid;
+	border-bottom:solid;
+	text-align:left;
+	border-width:0.15em;
+	border-color:#3E8914;
+	padding-left:1em
+}
+#Marketplace h2{
+	font-family:Chivo,sans-serif;
+	color:black;
+}
+.downloadedDiv{
+	width:20%;
+	border-top:solid;
+	border-bottom:solid;
+	border-right:solid;
+	border-top-right-radius:3em;
+	border-bottom-right-radius:3em;
+	text-align:left;
+	border-width:0.15em;
+	border-color:#3E8914;
+	padding-left:1em
+}
