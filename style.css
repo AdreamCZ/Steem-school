@@ -134,54 +134,51 @@ hr{
 	 align-items:center;
  }
  #Programs{
-	 border:solid;
-	 border-width:0.15em;
-	 border-color:#ff9800;
-	 border-radius:1.5em;
- }
+}
 a{
 	text-decoration:none;
 }
 .appDiv{
 	margin:1em;
 	display:flex;
-	justify-content:space-around;
-	border:solid;
+	align-items:center;
+	border:none;
+	border-radius:1.75em;
+	height:3.5em;
 	border-color:#ff9800;
 	border-width:0.15em;
-	border-radius:3em;
 }
 
 .nameDiv{
 	width:45%;
-	border-top-left-radius:3em;
-	border-bottom-left-radius:3em;
-	border-right:solid;
-	text-align:left;
-	border-width:0.15em;
+	border-top-left-radius:2em;
+	border-bottom-left-radius:2em;
 	border-color:#ff9800;
-	padding-left:1em;
-	background-color:#ff9800;
 	text-align:center;
 	color:black;
+	background-color:#ff9800;
 }
 
 .authorDiv{
 	width:35%;
-	text-align:left;
-	padding-left:1em;
 	text-align:center;
+	background-color:orange;
+	color:black;
+	border-left:solid;
+	border-right:solid;
+	border-width:0.3em;
 }
 #Marketplace h2{
 	font-family:Montserrat,sans-serif;
+	font-size:1.5em;
 }
 .downloadedDiv{
 	width:20%;
 	border-top-right-radius:3em;
 	border-bottom-right-radius:3em;
-	text-align:left;
-	padding-left:1em;
 	text-align:center;
+	background-color:#ff9800;
+	color:black;
 }
 #Searchboxdiv{
 	width:100%;
