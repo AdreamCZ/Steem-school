@@ -12,36 +12,43 @@
 <script type="text/javascript" src="js/tabletop.js"></script>
 <script type="text/javascript" src="js/market.js"></script>
 </head>
-<body id="Marketplace" class="w3-black">
-<div class="w3-top" style="position:fixed;top:0;width:100%">
-<div class="w3-top" style="position:fixed;top:0;width:100%">
+<body id="Marketplace" style="" class="">
+<div class="w3-top w3-animate-top" style="position:fixed;top:0;width:100%">
   <div class="w3-row w3-padding w3-black">
     <div class="w3-col" style="width:20%">
-      <a href="#" class="w3-button w3-block" style="background-color:#211d7cff; float:left">FOR USERS</a>
+      <a href="#" class="w3-button w3-block" style="background-color:#211d7cff">MARKETPLACE</a>
     </div>
-	<div class="w3-col" style="width:20%; float:right">
-		<a href="index.html" class="w3-orange w3-button w3-block">FOR DEVELOPERS</a>
+    <div class="w3-col" style="width:20%">
+      <a href="#crypto" class="w3-button w3-block w3-black">CRYPTOCURRENCY</a>
+    </div>
+    <div class="w3-col" style="width:20%">
+      <a href="#blockchain" class="w3-button w3-block w3-black">BLOCKCHAIN</a>
+    </div>
+    <div class="w3-col" style="width:20%">
+      <a href="#steem" class="w3-button w3-block w3-black">STEEM</a>
+    </div>
+	<div class="w3-col" style="width:20%">
+		<a href="developers.html" class="w3-button w3-block w3-orange">FOR DEVELOPERS</a>
 	</div>
   </div>
 </div>
-</div>
-<div style="margin:2em; margin-top:4em; background-color:black">
-  <div class="w3-black" id="Searchbox" style="">
+<div style="margin:2em; margin-top:4em">
+  <div class="w3-white" id="Searchbox" style="">
       <div id="Searchboxdiv">
-      <button class="w3-button" id="Searchb"><p style="width:100%; text-align:center; margin:0; padding:0">SEARCH</p></button>
+      <button class="w3-button" id="Searchb"><p style="width:100%; text-align:center">SEARCH</p></button>
 	  <input type="text" id="Search" class="w3-input"/>
-	  <button id="Loginb" class="w3-button"><p style="width:100%; text-align:center; margin:0; padding:0">LOGIN</p></button>
+	  <button id="Loginb" class="w3-button"><p style="width:100%; text-align:center">LOGIN</p></button>
       </div>
 
   <div id="Filters">
-		<button id="Nameb" class="w3-button">
-		<p style="margin:0; padding:0; width:100%; text-align:center">NAME</p>
+		<button id="Nameb" class="w3-button" onclick="nameSort()">
+		<p>NAME</p>
 		</button>
-		<button id="Authorb" class="w3-button">
-		<p style="margin:0; padding:0; width:100%; text-align:center">AUTHOR</p>
+		<button id="Authorb" class="w3-button" onclick="authorSort()">
+		<p>AUTHOR</p>
 		</button>
-		<button id="Downloadedb" class="w3-button">
-		<p style="margin:0; padding:0; width:100%; text-align:center">DOWNLOADED</p>
+		<button id="Downloadedb" class="w3-button" onclick="downloadedSort()">
+		<p>DOWNLOADED</p>
 		</button>
 	</div>
 	<div id="Programs">
