@@ -50,7 +50,7 @@ function authorSort(){
 			sortType="authorAsc";
     		if (authorA < authorB) //sort by name ascending
     			return -1;
-    		if (nameA > nameB)
+    		if (authorA > authorB)
       			return 1;
     		return 0 //default return value (no sorting)
 		}else if(sortType=="authorAsc"){ //If it is already sorted by name switch the order
@@ -67,21 +67,24 @@ function authorSort(){
 
 function downloadedSort(){
 	apps.sort(function(a, b){
-		var downloadedA=parseInt(a.downloaded), downloadedB=parseInt(a.downloaded);
+		var downloadedA=parseInt(a.downloaded);
+		var downloadedB=parseInt(b.downloaded);
 		if(sortType!="downloadedAsc"){
+			console.log("dwnASC");
 			sortType="downloadedAsc";
-			return 1;
+			return downloadedA-downloadedB;
 		}else if(sortType=="downloadedAsc"){
+			console.log("dwnDESC");
 			sortType="downloadedDesc";
-			return -1;
-			
+			return downloadedB-downloadedA;			
 		}
+		return 0;
 	});
 	populateList(apps);
 }
 
 function populateList(apps){
-	console.log(sortType);
+	
 	var listDiv = document.getElementById("Programs");
 	while(listDiv.firstChild){
 		listDiv.removeChild(listDiv.firstChild);
@@ -89,8 +92,9 @@ function populateList(apps){
 	}
 	
 	apps.forEach(function(app){
-		var appDiv = document.createElement("div"); //Div for 
+		var appDiv = document.createElement("div"); 
 		appDiv.className="appDiv";
+		appDiv.setAttribute("onClick","appInfo("+"\""+app.name+"\""+")");
 		var nameDiv = document.createElement("div");
 		nameDiv.className = "nameDiv";
 		var appName = document.createElement("h2");
@@ -113,7 +117,17 @@ function populateList(apps){
 		
 		listDiv.appendChild(appDiv);
 	});
-	
+}
+
+function appInfo(app){
+	var body = document.getElementsByTagName("body");
+	var overlayDiv = document.createElement("div");
+	overlayDiv.className="overlay";
+	body.appendChild(overlayDiv);
+	var nameH=document.createElement("h3");
+	nameH.className="appName";
+	nameH.innerHTML=app;
+	overlayDiv.appendChild(nameH);
 	
 }
 	
