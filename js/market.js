@@ -122,6 +122,10 @@ function populateList(apps){
 function appInfo(index){
 	app = apps[index];
 	var body = document.getElementsByTagName("body")[0];
+	var exitDiv = document.createElement("div");
+	exitDiv.className="exitDiv";
+	exitDiv.setAttribute("onClick","infoExit()");
+	body.appendChild(exitDiv);
 	var overlayDiv = document.createElement("div");
 	overlayDiv.className="overlay";
 	body.appendChild(overlayDiv);
@@ -131,7 +135,7 @@ function appInfo(index){
 	overlayDiv.appendChild(nameH);
 	var authorH = document.createElement("h3");
 	authorH.className="authorName";
-	authorH.innerHTML=app.author;
+	authorH.innerHTML="by:" + app.author;
 	overlayDiv.appendChild(authorH);
 	var downloadBut = document.createElement("button");
 	downloadBut.className="w3-button overbutton";
@@ -148,5 +152,16 @@ function appInfo(index){
 	contributeBut.appendChild(contributeText);
 	overlayDiv.appendChild(contributeBut);
 	
+}
+
+function infoExit(){
+	var overlayDiv=document.getElementsByClassName("overlay")[0];
+	var exitDiv = document.getElementsByClassName("exitDiv")[0];
+	console.log("Exit");
+	while(overlayDiv.firstChild){
+		overlayDiv.removeChild(overlayDiv.firstChild);
+	}
+	overlayDiv.parentNode.removeChild(overlayDiv);
+	exitDiv.parentNode.removeChild(exitDiv);
 }
 	
