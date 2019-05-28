@@ -5,6 +5,9 @@ function showLogin(){
 	overlayDiv.className="loginOverlay";
 	var exitBut = document.createElement("div");
 	exitBut.className = "exitBut";
+	var exitText = document.createElement("p");
+	exitText.innerHTML="X";
+	exitBut.appendChild(exitText);
 	overlayDiv.appendChild(exitBut);
 	var nameText=document.createElement("p");
 	nameText.className="loginText";
@@ -12,10 +15,13 @@ function showLogin(){
 	overlayDiv.appendChild(nameText);
 	var nameInput = document.createElement("input");
 	nameInput.setAttribute("type","text");
-	nameInput.className="loginInput";
+	nameInput.className="loginInput w3-input";
 	overlayDiv.appendChild(nameInput);
+	var passwordText = document.createElement("p");
+	passwordText.className="loginText";
+	passwordText.innerHTML="Password:";
 	var passwordInput = document.createElement("input");
-	passwordInput.className="loginInput";
+	passwordInput.className="loginInput w3-input";
 	passwordInput.setAttribute("type","password");
 	overlayDiv.appendChild(passwordInput);
 	var loginBut = document.createElement("button");
