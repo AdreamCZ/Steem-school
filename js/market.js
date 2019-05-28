@@ -198,7 +198,7 @@ function appInfo(index){
 	var exitBut = document.createElement("div");
 	exitBut.className=("exitBut");
 	exitBut.setAttribute("onclick","infoExit()");
-	var exitText - document.createElement("p");
+	var exitText = document.createElement("p");
 	exitText.innerHTML="X";
 	exitBut.appendChild(exitText);
 	overlayDiv.appendChild(exitBut);
