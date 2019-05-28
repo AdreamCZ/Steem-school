@@ -20,7 +20,7 @@ function showLogin(){
 	overlayDiv.appendChild(passwordInput);
 	var loginBut = document.createElement("button");
 	loginBut.className="w3-button w3-orange loginBut";
-	loginBut.setAttribute("onclick","login()");
+	loginBut.setAttribute("onclick","loginExit()");
 	overlayDiv.appendChild(loginBut);
 	var body=document.getElementsByTagName("body")[0];
 	body.appendChild(overlayDiv);
