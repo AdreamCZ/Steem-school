@@ -22,6 +22,8 @@ function showLogin(){
 	loginBut.className="w3-button w3-orange loginBut";
 	loginBut.setAttribute("onclick","login()");
 	overlayDiv.appendChild(loginBut);
+	var body=document.getElementsByClassName("body")[0];
+	body.appendChild(overlayDiv);
 	
 	
 }
@@ -184,6 +186,7 @@ function appInfo(index){
 	overlayDiv.appendChild(contributeBut);
 	var exitBut = document.createElement("div");
 	exitBut.className=("exitBut");
+	exitBut.setAttribute("onclick","infoExit");
 	overlayDiv.appendChild(exitBut);
 	
 }
@@ -191,12 +194,20 @@ function appInfo(index){
 function infoExit(){
 	var overlayDiv=document.getElementsByClassName("overlay")[0];
 	var exitDiv = document.getElementsByClassName("exitDiv")[0];
-	console.log("Exit");
 	while(overlayDiv.firstChild){
 		overlayDiv.removeChild(overlayDiv.firstChild);
 	}
 	overlayDiv.parentNode.removeChild(overlayDiv);
 	exitDiv.parentNode.removeChild(exitDiv);
+}
+
+function loginExit(){
+	var overlayDiv=document.getElementsByClassName("loginOverlay");
+	while(overlayDiv.firstChild){
+		overlayDiv.removeChild(overlayDiv.firstChild);
+	}
+	overlayDiv.parentNode.removeChild(overlayDiv);
+	
 }
 
 if(loaded){
