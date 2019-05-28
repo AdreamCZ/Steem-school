@@ -211,6 +211,7 @@ function infoExit(){
 
 function loginExit(){
 	var overlayDiv=document.getElementsByClassName("loginOverlay");
+	console.log("EXIT");
 	while(overlayDiv.firstChild){
 		overlayDiv.removeChild(overlayDiv.firstChild);
 	}
