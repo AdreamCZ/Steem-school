@@ -197,7 +197,10 @@ function appInfo(index){
 	overlayDiv.appendChild(contributeBut);
 	var exitBut = document.createElement("div");
 	exitBut.className=("exitBut");
-	exitBut.setAttribute("onclick","infoExit");
+	exitBut.setAttribute("onclick","infoExit()");
+	var exitText - document.createElement("p");
+	exitText.innerHTML="X";
+	exitBut.appendChild(exitText);
 	overlayDiv.appendChild(exitBut);
 	
 }
