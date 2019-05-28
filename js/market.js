@@ -1,4 +1,32 @@
 var dataLink = "https://docs.google.com/spreadsheets/d/1P-6rgqU9mipblhcLXVVBQ8IYQm44gRhavxgeCECQbzw/edit?usp=sharing";
+//Login window
+function showLogin(){
+	var overlayDiv = document.createElement("div");
+	overlayDiv.className="loginOverlay";
+	var exitBut = document.createElement("div");
+	exitBut.className = "exitBut";
+	overlayDiv.appendChild(exitBut);
+	var nameText=document.createElement("p");
+	nameText.className="loginText";
+	nameText.innerHTML="Username:";
+	overlayDiv.appendChild(nameText);
+	var nameInput = document.createElement("input");
+	nameInput.setAttribute("type","text");
+	nameInput.className="loginInput";
+	overlayDiv.appendChild(nameInput);
+	var passwordInput = document.createElement("input");
+	passwordInput.className="loginInput";
+	passwordInput.setAttribute("type","password");
+	overlayDiv.appendChild(passwordInput);
+	var loginBut = document.createElement("button");
+	loginBut.className="w3-button w3-orange loginBut";
+	loginBut.setAttribute("onclick","login()");
+	overlayDiv.appendChild(loginBut);
+	
+	
+}
+
+
 function Application(name,author,downloaded){
 	this.name = name;
 	this.author = author;
@@ -8,60 +36,64 @@ function Application(name,author,downloaded){
 	this.getAuthor=function(){ return this.author;}
 }
 var apps=[];
+var loaded = false;
 function init() {
   Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1P-6rgqU9mipblhcLXVVBQ8IYQm44gRhavxgeCECQbzw/edit?usp=sharing',
                    callback: function(data, tabletop) {
 						for(row = 0; row < data.length; row++){
 							apps.push(new Application(data[row]["Name"],data[row]["Author"],data[row]["Downloaded"]));
 						}
-                       populateList(apps);
+                       nameSort(apps);
+					   loaded = true;
                    },
                    simpleSheet: true } )
 }
 window.addEventListener('DOMContentLoaded', init);
-var sortType = "";
+
+var sortType = "downloadDesc";
 
 function nameSort(){
 	apps.sort(function(a, b){
 		var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
-		if(sortType!="nameAsc"){
-			sortType="nameAsc";
+		//if(sortType!="nameAsc"){
     		if (nameA < nameB) //sort by name ascending
     			return -1;
     		if (nameA > nameB)
       			return 1;
     		return 0 //default return value (no sorting)
-		}else if(sortType=="nameAsc"){ //If it is already sorted by name switch the order
-			sortType="nameDesc";
+		/*}else if(sortType=="nameAsc"){ //If it is already sorted by name switch the order
 			if (nameA > nameB) //sort by name descending
     			return -1;
     		if (nameA < nameB)
       			return 1;
     		return 0 //default return value (no sorting)	
-		}	
-	});		
+		}*/	
+	}); 
+	
+	//sortType=="nameDesc" ? sortType="nameAsc":sortType="nameDesc";
+	//console.log(sortType);
 	populateList(apps);
 }
+
 
 function authorSort(){
 	apps.sort(function(a, b){
 		var authorA=a.author.toLowerCase(), authorB=b.author.toLowerCase();
-		if(sortType!="authorAsc"){
-			sortType="authorAsc";
+	//	if(sortType!="authorAsc"){
     		if (authorA < authorB) //sort by name ascending
     			return -1;
     		if (authorA > authorB)
       			return 1;
     		return 0 //default return value (no sorting)
-		}else if(sortType=="authorAsc"){ //If it is already sorted by name switch the order
-			sortType="authorDesc";
+	/*	}else if(sortType=="authorAsc"){ //If it is already sorted by name switch the order
 			if (authorA > authorB) //sort by name descending
     			return -1;
     		if (authorA < authorB)
       			return 1;
     		return 0 //default return value (no sorting)	
-		}	
+		}	*/
 	});		
+	// sortType=="authorDesc" ? sortType="authorAsc":sortType="authorDesc";
 	populateList(apps);
 }
 
@@ -69,24 +101,22 @@ function downloadedSort(){
 	apps.sort(function(a, b){
 		var downloadedA=parseInt(a.downloaded);
 		var downloadedB=parseInt(b.downloaded);
-		if(sortType!="downloadedAsc"){
-			console.log("dwnASC");
-			sortType="downloadedAsc";
-			return downloadedA-downloadedB;
-		}else if(sortType=="downloadedAsc"){
-			console.log("dwnDESC");
-			sortType="downloadedDesc";
-			return downloadedB-downloadedA;			
-		}
-		return 0;
+	//	if(sortType!="downloadedAsc"){
+	//		console.log("dis");
+	//		return downloadedA-downloadedB;
+	//	}else if(sortType=="downloadedAsc"){
+	//		console.log("dat");
+		return downloadedB-downloadedA;			
+	//	}
+	//	return 0;
 	});
+	//sortType=="downloadDesc"? sortType="downloadAsc" : sortType="downloadDesc";
 	populateList(apps);
 }
 
 function populateList(apps){
-	
 	var listDiv = document.getElementById("Programs");
-	while(listDiv.firstChild){
+	while(listDiv.firstChild){ //Deleting the previous apps
 		listDiv.removeChild(listDiv.firstChild);
 		
 	}
@@ -144,6 +174,7 @@ function appInfo(index){
 	downloadText.innerHTML="DOWNLOAD";
 	downloadBut.appendChild(downloadText);
 	overlayDiv.appendChild(downloadBut);
+	overlayDiv.appendChild(document.createElement("br"));
 	var contributeBut = document.createElement("button");
 	contributeBut.className="w3-button overbutton";
 	var contributeText = document.createElement("p");
@@ -151,6 +182,9 @@ function appInfo(index){
 	contributeText.innerHTML="CONTRIBUTE";
 	contributeBut.appendChild(contributeText);
 	overlayDiv.appendChild(contributeBut);
+	var exitBut = document.createElement("div");
+	exitBut.className=("exitBut");
+	overlayDiv.appendChild(exitBut);
 	
 }
 
@@ -163,5 +197,29 @@ function infoExit(){
 	}
 	overlayDiv.parentNode.removeChild(overlayDiv);
 	exitDiv.parentNode.removeChild(exitDiv);
+}
+
+if(loaded){
+	var searchBox = document.getElementById("Search");
+	searchBox.addEventListener("keyup",function(event){
+		if(event.keyCode==13){
+			Search();
+		}
+	});	 
+}
+
+
+function Search(){
+	var searchBox = document.getElementById("Search");
+	sname = searchBox.value;
+	console.log(sname);
+	
+	apps.forEach(function(app,index){
+		if(app.name.includes(sname)== false){
+			apps.pop(index);
+		}
+	});
+	populateList(apps);
+	
 }
 	
