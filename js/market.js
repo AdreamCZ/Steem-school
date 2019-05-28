@@ -22,8 +22,9 @@ function showLogin(){
 	loginBut.className="w3-button w3-orange loginBut";
 	loginBut.setAttribute("onclick","login()");
 	overlayDiv.appendChild(loginBut);
-	var body=document.getElementsByClassName("body")[0];
+	var body=document.getElementsByTagName("body")[0];
 	body.appendChild(overlayDiv);
+	console.log("kok");
 	
 	
 }
