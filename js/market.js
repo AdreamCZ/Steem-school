@@ -5,6 +5,7 @@ function showLogin(){
 	overlayDiv.className="loginOverlay";
 	var exitBut = document.createElement("div");
 	exitBut.className = "exitBut";
+	exitBut.setAttribute("onclick","loginExit()");
 	var exitText = document.createElement("p");
 	exitText.innerHTML="X";
 	exitBut.appendChild(exitText);
@@ -27,8 +28,10 @@ function showLogin(){
 	overlayDiv.appendChild(passwordInput);
 	var loginBut = document.createElement("button");
 	loginBut.className="w3-button w3-orange loginBut";
-	loginBut.setAttribute("onclick","loginExit()");
 	overlayDiv.appendChild(loginBut);
+	var loginText = document.createElement("p");
+	loginText.innerHTML="Login";
+	loginBut.appendChild(loginText);
 	var body=document.getElementsByTagName("body")[0];
 	body.appendChild(overlayDiv);
 	console.log("kok");
@@ -210,7 +213,7 @@ function infoExit(){
 }
 
 function loginExit(){
-	var overlayDiv=document.getElementsByClassName("loginOverlay");
+	var overlayDiv=document.getElementsByClassName("loginOverlay")[0];
 	console.log("EXIT");
 	while(overlayDiv.firstChild){
 		overlayDiv.removeChild(overlayDiv.firstChild);
