@@ -20,6 +20,7 @@ function showLogin(){
 	var passwordText = document.createElement("p");
 	passwordText.className="loginText";
 	passwordText.innerHTML="Password:";
+	overlayDiv.appendChild(passwordText);
 	var passwordInput = document.createElement("input");
 	passwordInput.className="loginInput w3-input";
 	passwordInput.setAttribute("type","password");
