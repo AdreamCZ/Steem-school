@@ -253,8 +253,13 @@ a{
 	right:0;
 	left:0;
 	background-color:#ff0000f7;
-	z-index:2;
-	
+	z-index:3;
+	display:flex;
+	align-items:center;
+	justify-content:center;	
+}
+.exitBut p{
+	font-size:2em;
 }
 .loginInput{
 	width:50%;
@@ -287,4 +292,43 @@ a{
 	right:0;
 	left:0;
 	background-color:#000000f7;
+	width:100%;
+	height:100%;
+	display:flex;
+	align-items:center;
+	flex-direction:column;
+	margin-top:2em;
+	padding-top:3.5em;
+	margin-bottom:2em;
+}
+.pics-flex{
+	display: flex;
+	justify-content: space-around;
+	
+}
+.pic-size{
+	
+	height: 14em;
+	
+}
+	
+
+.name{
+	font-size:	2.5em	;
+	font-family:	Montserrat,sans-serif ;
+	width:7em;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+
+.name2{
+	font-size:	2em	;
+	width:7em;
+	color:white;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	height:2em;
 }
