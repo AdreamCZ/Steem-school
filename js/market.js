@@ -1,8 +1,5 @@
 var dataLink = "https://docs.google.com/spreadsheets/d/1P-6rgqU9mipblhcLXVVBQ8IYQm44gRhavxgeCECQbzw/edit?usp=sharing";
 //Login window
-function visitPage(href){
-	window.location=href;
-}
 function showLogin(){
 	var overlayDiv = document.createElement("div");
 	overlayDiv.className="loginOverlay";
@@ -43,11 +40,11 @@ function showLogin(){
 }
 
 
-function Application(name,author,downloaded,href){
+function Application(name,author,downloaded){
 	this.name = name;
 	this.author = author;
 	this.downloaded = downloaded;
-	this.href=href;
+
 	this.getName=function(){ return this.name;}
 	this.getAuthor=function(){ return this.author;}
 }
@@ -57,10 +54,17 @@ function init() {
   Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1P-6rgqU9mipblhcLXVVBQ8IYQm44gRhavxgeCECQbzw/edit?usp=sharing',
                    callback: function(data, tabletop) {
 						for(row = 0; row < data.length; row++){
-							apps.push(new Application(data[row]["Name"],data[row]["Author"],data[row]["Downloaded"],data[row]["Link"]));
+							apps.push(new Application(data[row]["Name"],data[row]["Author"],data[row]["Downloaded"]));
 						}
+						
+					var searchBox = document.getElementById("Search");
+					searchBox.addEventListener("keyup",function(event){
+					if(event.keyCode==13){
+						Search();
+					}
+					});	 
+						
                        nameSort(apps);
-					   loaded = true;
                    },
                    simpleSheet: true } )
 }
@@ -185,7 +189,6 @@ function appInfo(index){
 	overlayDiv.appendChild(authorH);
 	var downloadBut = document.createElement("button");
 	downloadBut.className="w3-button overbutton";
-downloadBut.setAttribute("onClick","visitPage("+"\""+app.href+"\")");
 	var downloadText = document.createElement("p");
 	downloadText.className="overbuttontext";
 	downloadText.innerHTML="DOWNLOAD";
@@ -229,26 +232,17 @@ function loginExit(){
 	
 }
 
-if(loaded){
-	var searchBox = document.getElementById("Search");
-	searchBox.addEventListener("keyup",function(event){
-		if(event.keyCode==13){
-			Search();
-		}
-	});	 
-}
-
 
 function Search(){
 	var searchBox = document.getElementById("Search");
 	sname = searchBox.value;
-	console.log(sname);
-	
+	var searchedApps = [];
 	apps.forEach(function(app,index){
-		if(app.name.includes(sname)== false){
-			apps.pop(index);
+		if(app.name.includes(sname) || app.author.includes(sname)){
+			searchedApps.push(app);
 		}
 	});
+	apps = searchedApps;
 	populateList(apps);
 	
 }
