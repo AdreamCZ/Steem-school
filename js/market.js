@@ -1,5 +1,8 @@
 var dataLink = "https://docs.google.com/spreadsheets/d/1P-6rgqU9mipblhcLXVVBQ8IYQm44gRhavxgeCECQbzw/edit?usp=sharing";
 //Login window
+function visitPage(href){
+	window.location=href;
+}
 function showLogin(){
 	var overlayDiv = document.createElement("div");
 	overlayDiv.className="loginOverlay";
@@ -40,11 +43,11 @@ function showLogin(){
 }
 
 
-function Application(name,author,downloaded){
+function Application(name,author,downloaded,href){
 	this.name = name;
 	this.author = author;
 	this.downloaded = downloaded;
-
+	this.href=href;
 	this.getName=function(){ return this.name;}
 	this.getAuthor=function(){ return this.author;}
 }
@@ -54,7 +57,7 @@ function init() {
   Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1P-6rgqU9mipblhcLXVVBQ8IYQm44gRhavxgeCECQbzw/edit?usp=sharing',
                    callback: function(data, tabletop) {
 						for(row = 0; row < data.length; row++){
-							apps.push(new Application(data[row]["Name"],data[row]["Author"],data[row]["Downloaded"]));
+							apps.push(new Application(data[row]["Name"],data[row]["Author"],data[row]["Downloaded"],data[row]["Link"]));
 						}
                        nameSort(apps);
 					   loaded = true;
@@ -182,6 +185,7 @@ function appInfo(index){
 	overlayDiv.appendChild(authorH);
 	var downloadBut = document.createElement("button");
 	downloadBut.className="w3-button overbutton";
+downloadBut.setAttribute("onClick","visitPage("+"\""+app.href+"\")");
 	var downloadText = document.createElement("p");
 	downloadText.className="overbuttontext";
 	downloadText.innerHTML="DOWNLOAD";
