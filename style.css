@@ -332,3 +332,35 @@ a{
 	justify-content:center;
 	height:2em;
 }
+.scroll{
+	position:absolute;
+	animation-name: slide;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	-webkit-animation-name: slide;
+	-webkit-animation-duration: 60s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-iteration-count: infinite;
+	top:0;
+	left:0;
+}
+._meetups{
+	overflow:hidden;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	color:white;
+	height:3em;
+	background-color:#211d4dff;
+	width:100%;
+	position:relative
+}
+@keyframes slide {
+  from { left: 100%;}
+  to { left: -100%;}
+}
+@-webkit-keyframes slide {
+  from { left: 100%;}
+  to { left: -100%;}
+}
